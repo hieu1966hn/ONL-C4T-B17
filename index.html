@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="info">
+        <div><input type="text" name="username" placeholder="nhap vao username"></div>
+        <div><input type="text" name="email" placeholder="nhap vao email"></div>
+        <div><input type="text" name="password" placeholder="nhap vao password"></div>
+        <div><input type="text" name="confirm_password" placeholder="nhap vao confirm password"></div>
+        <button type="submit">register</button>
+        <!-- // nut bam submit -->
+    </form>
+
+
+    <script>
+        // em viet 1 ham xac nhan xem phan tu truyen vao co phai la 1 mang hay khong.
+        function isArrayRight(Arr) {
+            // Arr co phai la 1 mang hay khong
+            if (Array.isArray(Arr)) {
+                return true;
+            }
+
+            return false //true||false
+        }
+
+        const form = document.getElementById('info'); //const la gi: hang
+        let users = [{ username: "Duong" }, { username: "Dong", email: "dong@gmail.com", password: "123" }, { username: "Hung" }]; // users co phai la 1 mang hay khong??
+        // day la doi tuong, khong phai mang
+        // console.log(isArrayRight(users));
+        // console.log(users);
+        // console.log(object);
+        // console.log(Array.isArray(users)); // cu phap kiem tra mang
+        // console.log(Array.isArray(object)); // kiem tra object co phai mang hay khong
+
+
+
+
+
+        // console.log();
+        // form.username.value = "123";
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // cau lenh chong lo du lieu
+            // console.log(form.username.value);
+            // console.log(form.email.value);
+            // console.log(form.password.value);
+            // console.log(form.confirm_password.value);
+            const user = { // tao ra 1 bien user
+                username: form.username.value,
+                email: form.email.value,
+                password: form.password.value
+            }
+            users.push(user);
+            console.log(users); // in ra user
+            form.username.value = "";
+            form.email.value = "";
+            form.password.value = "";
+        });
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].username == "Duong") {
+                console.log("da ton tai nguoi dung ten Duong");
+
+            }
+            if (users[i].username == "Dong") {
+                console.log("email", users[i].email);
+                console.log("password", users[i].password);
+            }
+
+            if (users[i].username === "Hung") {
+                if (users[i].email) { // o vi tri i co ton tai gia tri email
+                    console.log("email cua Hung la: ", users[i].email);
+                }
+                // dk de em in ra dong nay
+                else { // khong tin tai gia tri email
+                    console.log("khong ton tai email cua Hung ");
+                }
+            }
+        }
+    </script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
