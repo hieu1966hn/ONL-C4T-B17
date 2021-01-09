@@ -1,0 +1,56 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.btn {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.bg{
+    background-image: url("https://images.wallpaperscraft.com/image/sneakers_legs_shoes_backlight_116317_1920x1080.jpg");
+    background-size: cover;
+    height: 100vh;
+    color: #ffffff;
+}
+
+.info{
+    padding: 13% 10% 0 10%;
+    width: 80%;
+    height: 70%;
+}
+
+.success {
+    border-color: #4CAF50;
+    color: green;
+  }
+  
+  .success:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    justify-content: space-between;
+    height: 50%;
+    margin-top: 50px;
+}
+.intro-block{
+    width: 25%;
+    margin: 0px 10px;
+    height: 80%;
+    padding: 10px;
+    border: 4px solid #ffffff;
+    border-radius: 10px;
+    transition-property:background-color, color ;
+    transition: all 1s;
+}

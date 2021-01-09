@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="heading">
+        This is input level
+    </h1>
+    <input id="my-input" type="text" placeholder="type something">
+    <!-- <script>
+        // viet code js trong nay 
+        let myArray = [3, 4, 5, 1, 20];
+        /// tim so nho nhat va in ra no;
+
+        //khoi tao bien min
+        let min = myArray[0]; // min =3;
+
+        //khoi tao bien max
+        let max = myArray[0];
+        //vong lap for
+        for (let i = 0; i < myArray.length; i++) {
+            //kiem tra so nho hon
+            if (myArray[i] < min) {
+                min = myArray[i]; // min = 1
+            }
+            if (myArray[i] > max){
+                max = myArray[i];
+            }
+        }
+
+        console.log("so nho nhat trong mang la:", min);
+        console.log("so lon nhat trong mang la:", max);
+    </script> -->
+    <script>
+        // Event DOM ELEMENT: sự tương tác của người dùng đối với trang web bao gồm 
+        /** Các hành động đến từ bàn phím và chuột VD: click chuột, di chuột, gõ phím..
+         * => Tất cả những hàng động đó được gọi là Events.
+         * Có nhưng loại Event sau
+         * mouse events: mousedown, mouseup, click, dbclick, mousemove, mouseover, mousewheel,..
+         * touch events: touchstart, touchmove, touchend, touchcancel (tham khao them)
+         * keyboard events: keydown, keypress, keyup
+         * form events: focus, blur, change, submit......
+         * windown events: scroll, resize, load, unload (tham khao)
+         *
+         * Cú pháp:
+         *              document.addEventListener(event,function(){})
+         * */
+        const h1 = document.getElementById('heading');
+        // h1.addEventListener("click",function(){
+        //     console.log("clicked");
+        // });
+
+        // h1.addEventListener("mouseenter",function(){
+        //     console.log("ban da dua chuot vao the h1 nay");
+        // })
+        
+        h1.addEventListener("mouseleave",function(){
+            console.log("ban da Click chuot vao the h1 nay");
+        })
+
+
+        const myInput = document.getElementById('my-input');
+        myInput.addEventListener("keydown",function(){
+            console.log("inputingggg.....");
+        })
+    </script>
+</body>
+
+</html>

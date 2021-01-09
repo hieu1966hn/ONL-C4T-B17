@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0xp;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+        body{
+            background-image: url('https://free4kwallpapers.com/uploads/originals/2020/11/08/love-in-solace.-wallpaper_.jpg');
+            background-size: cover;
+        }
+        .flex{
+            display: flex;
+            justify-content: space-around;
+            /* flex-direction: row-reverse; */
+        }
+        .flex div{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Để 1 ngôn ngữ được gọi là ngôn ngữ lập trình, thì cần những điều gì?
+    -   Có toán tử: +, - *, /
+    -   Có function (hàm)
+    -   
+
+
+    => Tạo thành 1 ngôn ngữ lập trình:
+     được dùng, có những công cụ, thư viện, câu lệnh dùng dể lập trình máy tính làm 
+     hoặc tạo ra các chương chình theo mình muốn.
+    -->
+    <!-- 
+        HTML advance
+        CSS advance
+        js Basic - > advance
+     -->
+
+    <!-- <h1 id="header">
+        Hello world!!
+    </h1>
+
+    <button onclick="sayHello()">Click</button> -->
+
+    <h1>Cậu có thích mình không!!!!</h1>
+
+    <div class="flex">
+        <div id="yes" onclick="sayAgree()" style="width: 100px;height: 100px; background-color: pink; text-align: center; line-height: 100px; color: #3b2c2c;font-size: 20px;">
+            Có
+        </div>
+
+        <div id="no" onclick="sayAgree()"  style="width: 100px;height: 100px; background-color: pink; text-align: center; line-height: 100px; color: #3b2c2c;font-size: 20px;">
+           Không
+        </div>
+    </div>
+
+
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

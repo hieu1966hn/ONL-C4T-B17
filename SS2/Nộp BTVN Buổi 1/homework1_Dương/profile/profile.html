@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image_display">
+            <img id="image" src="placeholder-image.png" alt="picture goes here">
+        </div>
+        <div class="info_display">
+            <div>
+                <p>Họ và tên: </p>
+                <p id="name">Trần Minh Dương</p>
+            </div>
+            <div>
+                <p>Ngày sinh:</p>  
+                <p id="dob">30/12/2005</p>
+            </div>
+            <div>
+                <p>Giới tính:</p>  
+                <p id="gender">Nam</p>
+            </div>
+        </div>
+    </div>
+    <div class="innovator">
+        <button onclick="changeImage()" id="change_img">
+            Thay đổi ảnh
+        </button>
+        <button onclick="changeName()" id="change_name">
+            Thay đổi tên
+        </button> 
+        <button onclick="changeDOB()" id="change_dob">
+            Thay đổi ngày sinh
+        </button> 
+        <button onclick="changeGender()" id="change_gender">
+            Thay đổi giới tính
+        </button> 
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

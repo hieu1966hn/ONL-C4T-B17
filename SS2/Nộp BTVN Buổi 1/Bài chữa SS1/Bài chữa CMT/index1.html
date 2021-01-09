@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMDN</title>
+    <link rel="stylesheet" href="CSS/style1.css">
+</head>
+<body>
+<div class="main">
+    <div class="pic">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Emblem_of_Vietnam.svg" height="80px" width="80px" alt="">
+    <img id="image" src="https://st.quantrimang.com/photos/image/2020/07/30/Hinh-Nen-Trang-32.jpg" height="220px" width="170px" alt="">
+    </div>
+    <div>
+        <div class="heading">
+        <p>CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
+        <p style="text-decoration: underline ;">Độc lập - Tự do - Hạnh phúc</p>
+        <h1>GIẤY CHỨNG MINH NHÂN DÂN</h1>
+        <p onclick="number()" id="number">Số...................</p>
+        </div>
+        <div class="info">
+        <p onclick="name()" id="name">Họ tên:...................................................................</p>
+        <p onclick="name()">...............................................................................</p>
+        <p onclick="birth()" id="birth">Sinh ngày:..............................................................</p>
+        <p onclick="home_town()" id="home-town">Nguyên quán:.........................................................</p>
+        <p onclick="home_town()">...............................................................................</p>
+        <p onclick="live()" id="live">Nơi ĐKHK thường trú:............................................</p>
+        <p onclick="live()">...............................................................................</p>
+        </div>
+    </div>
+</div>
+<input type="file" onchange = "changeHandler(event)">
+<script src="./JS/app1.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+body {
+    background-image: url(./img/background.jpg);
+}
+
+.info {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 50px;
+}
+
+.profile {
+    border: 1px solid black;
+    width: 553px;
+    height: 318px;
+    margin: 50px auto;
+    border-radius: 25px;
+}
+
+.avt {
+    border: 1px solid green;
+    width: 160px;
+    height: 200px;
+    margin-left: 35px;
+}
+
+.personal {
+    margin-left: 20px;
+}
+
+.personal1 { 
+    margin-top: 22px;
+}

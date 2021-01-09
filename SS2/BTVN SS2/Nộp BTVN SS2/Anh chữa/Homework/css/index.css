@@ -1,0 +1,13 @@
+.links{
+    display: flex;
+    justify-content: space-evenly;
+}
+.main{
+    text-align: center;
+}
+a{
+    margin-top: 50px;
+    border: 1px black solid;
+    padding: 10px;
+    border-radius: 10px;
+}
