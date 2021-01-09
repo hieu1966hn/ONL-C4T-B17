@@ -102,3 +102,9 @@ a:hover{
 #checkCase{
     color: red;
 }
+.space-around{
+    padding: 50px 10%;
+}
+.footer{
+    background-color: rgb(124, 120, 120);
+}
