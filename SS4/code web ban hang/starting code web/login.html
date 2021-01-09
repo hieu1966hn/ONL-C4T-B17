@@ -12,15 +12,39 @@
     <div style="width: 100%; height: 100%;" class="container">
         <div id="leftSidebar"></div>
         <div id="rightSidebar">
-            <h1>Login</h1>           
+            <h1>Login</h1>
             <input type="email" id="email" placeholder="Type your email">
             <input type="password" id="password" placeholder="Type your password">
-            <button class="formButton">Sign In</button>
+            <button class="formButton" onclick="signIn()">Sign In</button>
             <p>Don't have an account??<a href="">Create Account</a></p>
             <p id="checkCase" style="display: none;">Login false, please try again</p>
         </div>
 
     </div>
+
+
+    <script>
+        const account_email = 'admin';
+        const account_password = 'password'
+
+        function signIn() {
+            const input_email = document.getElementById('email').value;
+            const input_password = document.getElementById('password').value;
+            const caseBlock = document.getElementById('checkCase');
+
+            if (input_email === account_email && input_password === account_password) {
+                caseBlock.style.display = 'block';
+                caseBlock.innerText = 'Sign in Successfull';
+                caseBlock.style.color = 'green';
+                console.log("Email: ", input_email);
+                console.log("Password: ", input_password);
+            }
+            else{
+                caseBlock.style.display='block';
+                caseBlock.style.color='red'
+            }
+        }
+    </script>
 </body>
 
 </html>
