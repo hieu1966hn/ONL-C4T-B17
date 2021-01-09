@@ -42,7 +42,7 @@
     margin: 0px;
     justify-content: space-between;
     height: 50%;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 .intro-block{
     width: 25%;
@@ -53,4 +53,52 @@
     border-radius: 10px;
     transition-property:background-color, color ;
     transition: all 1s;
+}
+
+#leftSidebar{
+    width: 50%;
+    height: 100vh;
+    background-image: url(./login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    
+}
+#rightSidebar{
+    width: 50%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    height: 5%;
+    width: 40%;
+    margin-bottom: 20px;
+}
+.formButton{
+    height: 5%;
+    width: 40%;
+    background-color: #4CAF50;
+    color: antiquewhite;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+.formButton:hover{
+    cursor: pointer;
+    background-color: black;
+}
+a{
+    color: rgb(88, 160, 16);
+    transition-property: color;
+    transition-duration: 0.5s;
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+}
+#checkCase{
+    color: red;
 }
