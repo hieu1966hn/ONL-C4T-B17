@@ -14,9 +14,11 @@
         <div id="rightSidebar">
             <h1>Register</h1>
             <input type="email" id="email" placeholder="Type your email">
-            <input type="name" placeholder="Type your name">
+            <input type="name" id="name" placeholder="Type your name">
             <input type="password" id="password" placeholder="Type your password">
-            <button class="formButton">Sign Up</button>
+            <input type="password" id="confirm-password" placeholder="Confirm password">
+
+            <button class="formButton" onclick="signUp()">Sign Up</button>
             <p>Already have an account? <a href="">Go to Login Page</a></p>
             <p id="checkCase" style="display: none;">Sign up false, please try again</p>
         </div>
@@ -24,8 +26,31 @@
     </div>
 
     <script>
-        function signUp(){
-            
+        function signUp() {
+            const input_email = document.getElementById('email').value;
+            const input_name = document.getElementById('name').value
+            const input_password = document.getElementById('password').value;
+            const input_password_confirm = document.getElementById('confirm-password').value;
+            const caseBlock = document.getElementById('checkCase');
+
+
+            if (input_email == "" || input_password == "" || input_name == "") {
+                console.log("Error");
+                caseBlock.style.display = "block";
+
+            }
+            else if (input_password_confirm !== input_password) {
+                caseBlock.innerText = 'check your password and confirm password is not correct'
+            }
+            else {
+                caseBlock.innerText = "Sign Up successfull";
+                caseBlock.style.color = 'green';
+                console.log("Sign up succesfull");
+                console.log("Email:", input_email);
+                console.log("Password:", input_password);
+                console.log("Name:", input_name);
+            }
+
         }
     </script>
 </body>
