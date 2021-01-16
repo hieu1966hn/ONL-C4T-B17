@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        canvas {
+            border: 1px solid #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="400" height="400" id="game"></canvas>
+
+    <script>
+        //lam khung chua game
+        const canvas = document.getElementById('game');
+        let context = canvas.getContext('2d');
+
+        let grid = 10;
+
+        //khoi tao doi tuong ran la 1 o vuong
+        let snake = {
+            x: 160,
+            y: 160,
+
+            dx: grid, // huong di chuyen theo phương x hoặc y,
+            // ở đây khi game started thì snake sẽ di chuyển theo phương ngang 
+            // (x direction với value = 10)
+            dy: 0,
+            cells: [],
+            maxCells: 4
+        }
+        let count = 0;
+        let mouse = { // khoi tao con chuot
+            x: 320,
+            y: 320
+        }
+
+        function getRandomInt(min, max) { // ham random
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        //game loop
+        function loop() {
+            //hàm này hiểu giống như là setTimeout, sẽ gọi lại hàm
+            /* loop sau khi thực thi xong*/
+
+            //requestAnimationFrame là 1 phương thức của trình duyệt, để xử lý chuyển động sao cho mượt mà nhất có thể (60fps)
+            requestAnimationFrame(loop);
+
+            if (++count < 4) {
+                return;
+            }
+
+            count = 0;
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            snake.x = snake.x + snake.dx;// moi lan loop chay thi snake se di chuyen 1 don vi
+            snake.y = snake.y + snake.dy;
+
+            //khi snake dung tuong thi phair lam sao
+
+
+
+            //su dung phuong thuc unshift se them 1 phan tu vao dau mang
+            snake.cells.unshift({ x: snake.x, y: snake.y });
+
+            // them 1 o vuong o phia truoc thi phai remove 1 cai o phia sau
+            if (snake.cells.length > snake.maxCells) {
+                snake.cells.pop();
+            }
+
+            //draw snake
+            context.fillStyle = 'green';
+            snake.cells.forEach(function (cell, index) {
+                //index: hieu la vi tri phan tu phan tu trong mang
+                //cell: hieu la phan tu dang xet trong mang
+                context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
+
+
+                //snake eat mouse
+                if (cell.x === mouse.x && cell.y === mouse.y){
+                    snake.maxCells++;
+
+                    mouse.x = getRandomInt(0,25)*grid;
+                    mouse.y = getRandomInt(0,25)*grid;
+
+
+                }
+
+                //
+            })
+        }
+
+        requestAnimationFrame(loop);
+    </script>
+</body>
+
+</html>
