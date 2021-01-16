@@ -45,7 +45,7 @@
             // (x direction với value = 10)
             dy: 0,
             cells: [],
-            maxCells: 40
+            maxCells: 4
         }
         let count = 0;
         let mouse = { // khoi tao con chuot
@@ -107,7 +107,7 @@
             context.fillRect(mouse.x, mouse.y, grid - 1, grid - 1);
 
             //draw snake
-            context.fillStyle = 'green';
+            context.fillStyle = 'pink';
             snake.cells.forEach(function (cell, index) {
                 //index: hieu la vi tri phan tu phan tu trong mang
                 //cell: hieu la phan tu dang xet trong mang
@@ -124,7 +124,7 @@
 
 
 
-                // check va cham chi an phai duoi
+                // check va cham khi an phai than
                 for (let i = index + 1; i < snake.cells.length; i++) {
                     //va cham thi reset game
                     if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
