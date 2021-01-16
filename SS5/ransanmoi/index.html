@@ -45,12 +45,12 @@
             // (x direction với value = 10)
             dy: 0,
             cells: [],
-            maxCells: 4
+            maxCells: 40
         }
         let count = 0;
         let mouse = { // khoi tao con chuot
-            x: 320,
-            y: 320
+            x: 300,
+            y: 300
         }
 
         function getRandomInt(min, max) { // ham random
@@ -102,6 +102,10 @@
                 snake.cells.pop();
             }
 
+            //draw mouse
+            context.fillStyle = 'red';
+            context.fillRect(mouse.x, mouse.y, grid - 1, grid - 1);
+
             //draw snake
             context.fillStyle = 'green';
             snake.cells.forEach(function (cell, index) {
@@ -116,11 +120,29 @@
 
                     mouse.x = getRandomInt(0, 25) * grid;
                     mouse.y = getRandomInt(0, 25) * grid;
-
-
                 }
 
-                //
+
+
+                // check va cham chi an phai duoi
+                for (let i = index + 1; i < snake.cells.length; i++) {
+                    //va cham thi reset game
+                    if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+                        snake.x = 160;
+                        snake.y = 160;
+
+                        snake.cells = [];
+
+                        snake.maxCells = 4;
+
+                        snake.dx = grid;
+                        snake.dy = 0;
+
+
+                        mouse.x = getRandomInt(0, 25) * grid;
+                        mouse.y = getRandomInt(0, 25) * grid;
+                    }
+                }
             })
         }
 
@@ -134,9 +156,13 @@
                 snake.dy = -grid;
                 snake.dx = 0;
             }
-            else if(event.which === 40 && snake.dy ===0){
+            else if (event.which === 40 && snake.dy === 0) {
                 snake.dy = grid
-                snake.dx =0;
+                snake.dx = 0;
+            }
+            else if (event.which === 39 && snake.dx === 0) {
+                snake.dx = grid;
+                snake.dy = 0
             }
         })
         requestAnimationFrame(loop);
