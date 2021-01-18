@@ -64,6 +64,8 @@
 
             //requestAnimationFrame là 1 phương thức của trình duyệt, để xử lý chuyển động sao cho mượt mà nhất có thể (60fps)
             requestAnimationFrame(loop);
+            
+            console.log("loop");
 
             if (++count < 4) {
                 return;
@@ -111,7 +113,15 @@
             snake.cells.forEach(function (cell, index) {
                 //index: hieu la vi tri phan tu phan tu trong mang
                 //cell: hieu la phan tu dang xet trong mang
+
+
                 context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
+                /*
+                x: Tọa độ X của góc trái phía trên của hình chữ nhật
+                y: Tọa độ Y của góc trái phía trên của hình chữ nhật
+                width:  Chiều dài của hình chữ nhật, tính bằng pixels
+                height: Chiều cao của hình chữ nhật, tính bằng pixels
+                */
 
 
                 //snake eat mouse
@@ -166,6 +176,7 @@
             }
         })
         requestAnimationFrame(loop);
+                
     </script>
 </body>
 
