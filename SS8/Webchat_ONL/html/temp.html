@@ -3,31 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resgister Screen</title>
+    <title>Login Screen</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/register.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/login.css" />
   </head>
   <body>
-    <div class="register-container">
+    <div class="login-container">
       <div class="aside-right">
         <div class="header">
           <h3>MindX Chat</h3>
         </div>
 
         <!-- code phan input -->
-        <form id="register-form">
-          <div class="input-name-wrapper">
-            <div class="input-wrapper">
-              <input type="text" name="" placeholder="First name" />
-              <div class="error" id="first-name-error"></div>
-            </div>
-
-            <div class="input-wrapper">
-              <input type="text" name="" placeholder="Last name" />
-              <div class="error" id="last-name-error"></div>
-            </div>
-          </div>
-
+        <form id="login-form">
           <!-- code the email -->
           <div class="input-wrapper">
             <input type="email" name="email" placeholder="Email..." />
@@ -37,32 +26,26 @@
           <div class="input-wrapper">
             <input
               type="password"
-              name=""
+              name="password"
               placeholder="Please input your password"
             />
             <div class="error" id="password-error"></div>
           </div>
 
-          <div class="input-wrapper">
-            <input
-              type="password"
-              name=""
-              placeholder="Please input your password again"
-            />
-            <div class="error" id="confirm-password-error"></div>
-          </div>
-
           <!-- da xong cac truong input -->
           <div class="form-action">
-            <span id="redirect-to-login"> Already have an account? Login </span>
-
-            <button class="btn" type="submit">Register</button>
+            <span class="cursor-pointer" id="redirect-to-register">
+              Don't have an account? register
+            </span>
+            <button class="btn" type="submit">Login</button>
           </div>
         </form>
       </div>
     </div>
-    <div class="aside-right">
-        hello
-    </div>
+    
+    <script src="../js/index.js"></script>
+    <script src="../js/view.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/controller.js"></script>
   </body>
 </html>

@@ -17,12 +17,12 @@ components.registerScreen = `
   <form id="register-form">
     <div class="input-name-wrapper">
       <div class="input-wrapper">
-        <input type="text" name="" placeholder="First name" />
+        <input type="text" name="firstName" placeholder="First name" />
         <div class="error" id="first-name-error"></div>
       </div>
 
       <div class="input-wrapper">
-        <input type="text" name="" placeholder="Last name" />
+        <input type="text" name="lastName" placeholder="Last name" />
         <div class="error" id="last-name-error"></div>
       </div>
     </div>
@@ -36,7 +36,7 @@ components.registerScreen = `
     <div class="input-wrapper">
       <input
         type="password"
-        name=""
+        name="password"
         placeholder="Please input your password"
       />
       <div class="error" id="password-error"></div>
@@ -45,7 +45,7 @@ components.registerScreen = `
     <div class="input-wrapper">
       <input
         type="password"
-        name=""
+        name="confirmPassword"
         placeholder="Please input your password again"
       />
       <div class="error" id="confirm-password-error"></div>
@@ -53,7 +53,7 @@ components.registerScreen = `
 
     <!-- da xong cac truong input -->
     <div class="form-action">
-      <span id="redirect-to-login"> Already have an account? Login </span>
+      <span class = "cursor-pointer" id="redirect-to-login"> Already have an account? Login </span>
 
       <button class="btn" type="submit">Register</button>
     </div>
@@ -61,3 +61,38 @@ components.registerScreen = `
 </div>
 </div>
 `;
+
+components.loginScreen = `
+<div class="login-container">
+      <div class="aside-right">
+        <div class="header">
+          <h3>MindX Chat</h3>
+        </div>
+
+        <!-- code phan input -->
+        <form id="login-form">
+          <!-- code the email -->
+          <div class="input-wrapper">
+            <input type="email" name="email" placeholder="Email..." />
+            <div class="error" id="email-error"></div>
+          </div>
+
+          <div class="input-wrapper">
+            <input
+              type="password"
+              name="password"
+              placeholder="Please input your password"
+            />
+            <div class="error" id="password-error"></div>
+          </div>
+
+          <!-- da xong cac truong input -->
+          <div class="form-action">
+            <span class="cursor-pointer" id="redirect-to-register">
+              Don't have an account? register
+            </span>
+            <button class="btn" type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>`;

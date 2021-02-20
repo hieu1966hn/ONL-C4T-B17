@@ -24,3 +24,15 @@
   background-color: #1f6ac4;
   border-radius: 5px;
 }
+
+.error{
+  color: red;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.form-action span{
+  font-size: 25px;
+}
