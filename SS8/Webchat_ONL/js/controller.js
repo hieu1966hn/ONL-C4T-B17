@@ -1,10 +1,12 @@
 const controller = {};
 controller.register = (data) => {
+
+
   if (data.firstName.trim() === "") {
     document.getElementById("first-name-error").innerText =
       "Please input first name";
   } else {
-    document.getElementById("first-name-error").innerText = "";
+    document.getElementById("first-name-error").innerText = ""; // div rỗng => height == 0
   }
 
   if (data.lastName.trim() === "") {
@@ -36,4 +38,36 @@ controller.register = (data) => {
   } else {
     document.getElementById("confirm-password-error").innerText = "";
   }
+  
+  ///  Hiểu là các bước trên chỉ là để in ra lỗi
+  // view.setActiveScreen('loginScreen');
+
+
+
+  /// đây là bước kiểm tra điều kiện đăng ký
+  if (data.firstName !== "" &&
+    data.lastName !=="" &&
+    data.email !== "" &&
+    data.password !== "" &&
+    data.confirmPassword !== "" &&
+    data.password === data.confirmPassword) {
+      model.register(data); // gọi tới firebase để tạo một người dùng mới
+  }
 };
+
+///////////////////////
+controller.login = (dataLogin) => {
+  if (dataLogin.email === "") {
+    document.getElementById("email-error").innerHTML = 'Please input email';
+  }
+  else {
+    document.getElementById("email-error").innerHTML = '';
+  }
+
+  if (dataLogin.password === "") {
+    document.getElementById("password-error").innerHTML = 'Please input password';
+  }
+  else {
+    document.getElementById("password-error").innerHTML = '';
+  }
+}
