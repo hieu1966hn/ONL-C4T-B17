@@ -16,9 +16,9 @@ view.setActiveScreen = (screenName) => {
           view.setActiveScreen("registerScreen");
         });
 
-
+        // lấy ra thẻ form
       const loginForm = document.getElementById('login-form');
-      loginForm.addEventListener("submit", (event) =>{
+      loginForm.addEventListener("submit", (event) => {
         event.preventDefault(); // khoong load lai trang
         loginForm.email.value = loginForm.email.value.trim(); // làm cho người dùng nhập 
         //không bị thừa dấu cách bên trái or phải
@@ -53,6 +53,13 @@ view.setActiveScreen = (screenName) => {
         .addEventListener("click", () => {
           view.setActiveScreen("loginScreen");
         });
+      break;
+
+
+    // viết thêm phần này vào cho anh
+    case "chatScreen":
+      document.getElementById("app").innerHTML = components.chatScreen;
+      document.getElementById("welcome-user").innerText = 'Welcome to ' + model.currentUser.displayName;
       break;
   }
 };

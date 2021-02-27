@@ -1,7 +1,6 @@
 const controller = {};
 controller.register = (data) => {
 
-
   if (data.firstName.trim() === "") {
     document.getElementById("first-name-error").innerText =
       "Please input first name";
@@ -38,7 +37,7 @@ controller.register = (data) => {
   } else {
     document.getElementById("confirm-password-error").innerText = "";
   }
-  
+
   ///  Hiểu là các bước trên chỉ là để in ra lỗi
   // view.setActiveScreen('loginScreen');
 
@@ -46,28 +45,40 @@ controller.register = (data) => {
 
   /// đây là bước kiểm tra điều kiện đăng ký
   if (data.firstName !== "" &&
-    data.lastName !=="" &&
+    data.lastName !== "" &&
     data.email !== "" &&
     data.password !== "" &&
     data.confirmPassword !== "" &&
     data.password === data.confirmPassword) {
-      model.register(data); // gọi tới firebase để tạo một người dùng mới
+    model.register(data); // gọi tới firebase để tạo một người dùng mới
   }
 };
 
 ///////////////////////
+//////// thao tác trong login 
 controller.login = (dataLogin) => {
-  if (dataLogin.email === "") {
-    document.getElementById("email-error").innerHTML = 'Please input email';
+  if (dataLogin.email.trim() === "") {
+      document.getElementById("email-error").
+          innerText = `*Please input email`
   }
   else {
-    document.getElementById("email-error").innerHTML = '';
+      document.getElementById("email-error").
+          innerText = '';
+  }
+  if (dataLogin.password === "") {
+      document.getElementById("password-error").
+          innerText = `*Please type password`
+  }
+  else {
+      document.getElementById("password-error").
+          innerText = '';
   }
 
-  if (dataLogin.password === "") {
-    document.getElementById("password-error").innerHTML = 'Please input password';
+  /// Phần kiểm tra email và pass != "". 
+  // Nếu khác rỗng thì mình đi vào phần model.login(dataLogin)
+  if (dataLogin.email !== "" &&
+      dataLogin.password !== "") {
+      model.login(dataLogin);
   }
-  else {
-    document.getElementById("password-error").innerHTML = '';
-  }
-}
+
+};

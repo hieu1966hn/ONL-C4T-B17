@@ -96,3 +96,8 @@ components.loginScreen = `
         </form>
       </div>
     </div>`;
+
+
+  components.chatScreen = `
+  <h1 id ="welcome-user"></h1>
+  `
