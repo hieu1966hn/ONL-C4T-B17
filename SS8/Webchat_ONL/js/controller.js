@@ -57,6 +57,7 @@ controller.register = (data) => {
 ///////////////////////
 //////// thao tác trong login 
 controller.login = (dataLogin) => {
+  
   if (dataLogin.email.trim() === "") {
       document.getElementById("email-error").
           innerText = `*Please input email`

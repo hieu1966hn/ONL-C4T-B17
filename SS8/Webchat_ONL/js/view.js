@@ -16,7 +16,7 @@ view.setActiveScreen = (screenName) => {
           view.setActiveScreen("registerScreen");
         });
 
-        // lấy ra thẻ form
+      // lấy ra thẻ form
       const loginForm = document.getElementById('login-form');
       loginForm.addEventListener("submit", (event) => {
         event.preventDefault(); // khoong load lai trang
@@ -59,7 +59,10 @@ view.setActiveScreen = (screenName) => {
     // viết thêm phần này vào cho anh
     case "chatScreen":
       document.getElementById("app").innerHTML = components.chatScreen;
-      document.getElementById("welcome-user").innerText = 'Welcome to ' + model.currentUser.displayName;
+      document.getElementById("welcome-user").innerText = 'Welcome to ' + model.currentUser.displayName + " screen";
+      document.getElementById('sign-out-button').addEventListener('click', () => {
+        firebase.auth().signOut();
+      });
       break;
   }
 };

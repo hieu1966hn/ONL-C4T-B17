@@ -1,51 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Screen</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/login.css" />
-    <link rel="stylesheet" href="../css/login.css" />
-  </head>
-  <body>
-    <div class="login-container">
-      <div class="aside-right">
-        <div class="header">
-          <h3>MindX Chat</h3>
-        </div>
 
-        <!-- code phan input -->
-        <form id="login-form">
-          <!-- code the email -->
-          <div class="input-wrapper">
-            <input type="email" name="email" placeholder="Email..." />
-            <div class="error" id="email-error"></div>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Screen</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/register.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+  <link rel="stylesheet" href="../css/chat.css" />
+</head>
 
-          <div class="input-wrapper">
-            <input
-              type="password"
-              name="password"
-              placeholder="Please input your password"
-            />
-            <div class="error" id="password-error"></div>
-          </div>
+<body>
+  <h1 id="welcome-user">Hi my name is Nguyễn Trung Hiếu</h1>
+  <div>
+    <button class="btn" id="sign-out-button">
+        Sign-out
+    </button>
+  </div>
 
-          <!-- da xong cac truong input -->
-          <div class="form-action">
-            <span class="cursor-pointer" id="redirect-to-register">
-              Don't have an account? register
-            </span>
-            <button class="btn" type="submit">Login</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    
-    <script src="../js/index.js"></script>
-    <script src="../js/view.js"></script>
-    <script src="../js/components.js"></script>
-    <script src="../js/controller.js"></script>
-  </body>
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+  <!-- để hiểu là mình sẽ sử dụng tính năng auth của firebase -->
+  <script src="../js/index.js"></script>
+  <script src="../js/controller.js"></script>
+  <script src="../js/view.js"></script>
+  <script src="../js/components.js"></script>
+  <script src="../js/model.js"></script>
+</body>
+
 </html>

@@ -100,4 +100,9 @@ components.loginScreen = `
 
   components.chatScreen = `
   <h1 id ="welcome-user"></h1>
+  <div>
+    <button class="btn" id="sign-out-button">
+        Sign-out
+    </button>
+  </div>
   `
